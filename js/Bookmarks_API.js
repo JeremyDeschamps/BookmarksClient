@@ -9,13 +9,13 @@ class bookmarks_API {
             });
         });
     }
-    static async Save(contact, create = true) {
+    static async Save(bookmark, create = true) {
         return new Promise(resolve => {
             $.ajax({
                 url: this.API_URL(),
                 type: create ? "POST" : "PUT",
                 contentType: 'application/json',
-                data: JSON.stringify(contact),
+                data: JSON.stringify(bookmark),
                 success: (/*data*/) => { resolve(true); },
                 error: (/*xhr*/) => { resolve(false /*xhr.status*/); }
             });
