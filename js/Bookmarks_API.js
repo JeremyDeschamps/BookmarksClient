@@ -1,10 +1,10 @@
-class Contacts_API {
-    static API_URL() { return "http://localhost:5000/api/contacts" };
+class bookmarks_API {
+    static API_URL() { return "http://localhost:5000/api/bookmarks" };
     static async Get(id = null) {
         return new Promise(resolve => {
             $.ajax({
                 url: this.API_URL() + (id != null ? "/" + id : ""),
-                success: contacts => { resolve(contacts); },
+                success: bookmarks => { resolve(bookmarks); },
                 error: (xhr) => { console.log(xhr); resolve(null); }
             });
         });
