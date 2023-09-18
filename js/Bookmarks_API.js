@@ -1,4 +1,4 @@
-class bookmarks_API {
+class Bookmarks_API {
     static API_URL() { return "http://localhost:5000/api/bookmarks" };
     static async Get(id = null) {
         return new Promise(resolve => {
@@ -9,13 +9,13 @@ class bookmarks_API {
             });
         });
     }
-    static async Save(bookmark, create = true) {
+    static async Save(bookmarks, create = true) {
         return new Promise(resolve => {
             $.ajax({
                 url: this.API_URL(),
                 type: create ? "POST" : "PUT",
                 contentType: 'application/json',
-                data: JSON.stringify(bookmark),
+                data: JSON.stringify(bookmarks),
                 success: (/*data*/) => { resolve(true); },
                 error: (/*xhr*/) => { resolve(false /*xhr.status*/); }
             });
